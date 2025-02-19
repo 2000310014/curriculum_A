@@ -92,7 +92,7 @@ public class Qes_1_13 {
 				
 	//[概要]　文字列型の初期化処理
 	//[詳細]　「Hello」を初期値に設定する。
-		String stringWord2 = "null";
+		String stringWord2 = null;
 		System.out.println(stringWord2);
 					
 	//[概要]　ブーリアン型の初期化処理
