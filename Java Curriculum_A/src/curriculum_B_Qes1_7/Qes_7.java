@@ -57,6 +57,7 @@ public class Qes_7 {
 		System.out.printf("数学の平均点は%.2f点です。\n", totalMath / person);
 		System.out.printf("理科の平均点は%.2f点です。\n", totalScience / person);
 		System.out.printf("社会の平均点は%.2f点です。\n", totalSocial / person);
+		System.out.printf("全体の平均点は%.2f点です。\n", (totalEnglish + totalMath + totalScience + totalSocial) / person);
 		
 		scanner.close(); //scannerを閉じる（リソースリーク防止）
 	}

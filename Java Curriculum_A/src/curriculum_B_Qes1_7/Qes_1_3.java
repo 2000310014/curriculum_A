@@ -36,7 +36,6 @@ public class Qes_1_3 {
 		}
 		//正しく入力された場合の処理
 		System.out.println("ユーザー名「" + name + "」を登録しました");
-		scanner.close(); //scannerを閉じる（リソースリーク防止）
 		
 		
 		
@@ -44,13 +43,12 @@ public class Qes_1_3 {
 		
 		//[概要] scannerを使用した、ログイン時の入力チェックシステム作成
 		//[詳細]　条件　ユーザー名が半角英数字以外の場合「半角英数字のみで名前を入力してください」と出力
-		
-		Scanner scanner2 = new Scanner(System.in); //scannerオブジェクト作成
+
 		String name2 = ""; //ユーザーの名前を保存する変数を用意
 		
 		while (true) { //無限ループ（正しい入力があるまで繰り返す）
 			System.out.print("「半角英数字のみで名前を入力してください」");
-			name2 = scanner2.nextLine(); //ユーザーが入力した文字を取得
+			name2 = scanner.nextLine(); //ユーザーが入力した文字を取得
 			
 			//何も入力されなかったとき、エラーメッセージを出して再入力
 			if (name2.length() == 0) {
@@ -71,7 +69,6 @@ public class Qes_1_3 {
 		}
 		//正しく入力された場合の処理
 		System.out.println("ユーザー名「" + name2 + "」を登録しました");
-		scanner2.close(); //scannerを閉じる（リソースリーク防止）
 		
 		
 		//　Qes3
@@ -82,48 +79,20 @@ public class Qes_1_3 {
 					   一回ごとに自分の手と相手の手を下記の通り出力
 					   じゃんけんを行った回数を表示してください */
 		
-		Scanner scanner3 = new Scanner(System.in);
-		
-		String name3 = ""; //ユーザーの名前を保存する変数を用意
-		
-		while (true) { //無限ループ（正しい入力があるまで繰り返す）
-			System.out.print("「半角英数字のみで名前を入力してください」");
-			name3 = scanner3.nextLine(); //ユーザーが入力した文字を取得
-			
-			//何も入力されなかったとき、エラーメッセージを出して再入力
-			if (name3.length() == 0) {
-				System.out.println("「名前を入力してください」");
-			
-			//10文字以上のとき、エラーメッセージを出して再入力
-			} else if (name3.length() > 10) {
-				System.out.println("「名前を10文字以内にしてください」");	
-				
-			//半角英数字以外が入力された場合、エラーメッセージを出して再入力
-			} else if (!name3.matches("^[a-zA-Z0-9]+$")) {
-				System.out.println("「半角英数字のみで名前を入力してください」");	
-				
-			//正しく入力された場合ループを抜ける
-			} else {
-				break;
-			}
-		}
-		//正しく入力された場合の処理
-		System.out.println("ユーザー名「" + name3 + "」を登録しました");
-		
 		int gameCount = 0; //じゃんけんをカウントする
 		
 		while (true) {
 			gameCount++; //1回ごとに足していく
 			
-			System.out.print(name3 + "の手を入力してください（0: グー, 1: チョキ, 2: パー）: ");
-			int userHand = scanner3.nextInt(); //ユーザーが入力した手を取得
-			scanner3.nextLine(); //改行を消すため
+			System.out.print(name2 + "の手を入力してください（0: グー, 1: チョキ, 2: パー）: ");
+			int userHand = scanner.nextInt(); //ユーザーが入力した手を取得
+			scanner.nextLine(); //改行を消すため
 			
 			Random rand = new Random();
 			int computerHand = rand.nextInt(3); //コンピュータの手をランダムに決定
 			
 			//それぞれの手を表示
-			System.out.println(name3 + "の手は" + handToString(userHand));
+			System.out.println(name2 + "の手は" + handToString(userHand));
 			System.out.println( "相手の手は" + handToString(computerHand));
 			
 			//あいこの場合
@@ -160,7 +129,7 @@ public class Qes_1_3 {
 		//じゃんけんの合計回数
 		System.out.println("勝つまでにかかった合計回数は" + gameCount + "回です");
 		
-		scanner3.close(); //scannerを閉じる（リソースリーク防止）
+		scanner.close(); //scannerを閉じる（リソースリーク防止）
 	}
 	//手を文字列に変換するメソッド（0: グー, 1: チョキ, 2: パー）
 	public static String handToString(int hand) {
