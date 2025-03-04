@@ -2,16 +2,6 @@ package curriculum_1_19;
 
 import java.time.LocalDateTime; //時間を取得するインポート
 import java.time.format.DateTimeFormatter; //表示形式を決めるインポート
-
-	class Animal { //Animalクラス作成
-		String name; //動物の名前を格納する変数
-		int num;     //動物の数を格納する変数
-		
-		//紹介メソッド
-		void introduce() {
-			System.out.printf("名前:  %-10s\n 数: %3d匹\n", name, num );
-		}
-	}
 	
 	public class Qes_animal {
 		public static void main(String[] args) {
