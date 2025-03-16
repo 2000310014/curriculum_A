@@ -22,8 +22,8 @@ public class Main {
 			String[] details = data.split(":"); //「 : 」で分けて名前・体長・速度に分ける
 			if (details.length == 3) { //3つのデータ(名前・体長・速度)があるか確認
 				String name = details[0];
-				float height = Float.parseFloat(details[1]);
-				int speed = Integer.parseInt(details[2]);
+				float height = Float.parseFloat(details[1]); //体長を浮動小数点に変換
+				int speed = Integer.parseInt(details[2]); //速度を整数に変換
 				
 				animals.add(new Animal(name, height, speed)); //動物リストに追加
 			}
