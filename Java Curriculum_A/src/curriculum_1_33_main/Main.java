@@ -5,7 +5,7 @@ import curriculum_1_33_Vehicle.Car; //Carクラスを使用
 import curriculum_1_33_person.Person; //Personクラスを使用
 
 public class Main {
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		Person person1 = new Person("鈴木", "太郎");
 		Person person2 = new Person("山田", "花子");
 		

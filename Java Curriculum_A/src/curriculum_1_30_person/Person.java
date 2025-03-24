@@ -20,7 +20,7 @@ public class Person { //Personクラスを作成
 	
 	//インスタンスメソッド「BMI」を定義
 	public double bmi() {
-		return this.weight / (this.height * this.height);  //BMIの計算式
+		return Math.floor(this.weight / (this.height * this.height)) + 0.0;  //BMIの計算式 小数点は全て切り捨て
 	}
 	
 	public void print() {

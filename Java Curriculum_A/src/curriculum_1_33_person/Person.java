@@ -10,13 +10,13 @@ public class Person {
 	public String lastName;
 
 	//コンストラクタを作成
-	public Person(String firstName, String lastName){
+	public Person(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
 
 	//フルネームを取得
-	public String fullName(){
+	public String fullName() {
 		return this.firstName + this.lastName;
 	}
 	
